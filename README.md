@@ -47,7 +47,7 @@
 		- Notification Text
 			-- keep it simple. 1 line only!!!
 
-[![s4.png](https://postimg.cc/dLFH8Dhn)](https://postimg.cc/dLFH8Dhn)
+[![s4.png](https://i.postimg.cc/CLB3pqSy/Screenshot-2022-09-25-052348.png)](https://postimg.cc/dLFH8Dhn)
 
-[![s3.png](https://postimg.cc/F13Cd0H7)](https://postimg.cc/F13Cd0H7)
+[![s3.png](https://i.postimg.cc/mZ6vnwxN/Screenshot-2022-09-25-052244.png)](https://postimg.cc/F13Cd0H7)
 
