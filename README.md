@@ -23,7 +23,7 @@
 	
 	a) <text><xsl:value-of select="//NotificationPlainBody" /></text> = The text value will be taken from configured Ticket Notification or you can define your text here
 	
-	Only text are acceptable here.
+	*Only text are acceptable here.
 
 	
 5. Import and deploy AgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
