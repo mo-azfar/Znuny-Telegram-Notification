@@ -11,6 +11,7 @@
 3. Update the telegram bot token at the created webservice.
 
 	a) OTRS as requester > Network transport (HTTP::REST) > Configure
+	
 	b) Endpoint : https://api.telegram.org/botUPDATE_TELEGRAM_TOKEN_HERE
 	
 		e.g: https://api.telegram.org/botABCDEGH823742734984HJDFHhsdjghjjd
