@@ -1,0 +1,48 @@
+---
+Debugger:
+  DebugThreshold: debug
+  TestMode: '0'
+Description: ''
+FrameworkVersion: 6.4.3
+Provider:
+  Transport:
+    Type: ''
+RemoteSystem: ''
+Requester:
+  Invoker:
+    Webhook:
+      Description: ''
+      Events: []
+      GetAllArticleAttachments: '0'
+      MappingOutbound:
+        Config:
+          DataInclude: []
+          ForceArray: ''
+          KeepAttributes: ''
+          PostRegExFilter: ~
+          PostRegExValueCounter: ~
+          PreRegExFilter: ~
+          PreRegExValueCounter: ~
+          Template: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<xsl:transform
+            version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:date=\"http://exslt.org/dates-and-times\"
+            extension-element-prefixes=\"date\">\r\n    <xsl:output method=\"xml\"
+            encoding=\"utf-8\" indent=\"yes\"/>\r\n    <xsl:template match=\"RootElement\">\r\n
+            \       <xsl:copy>\r\n            <chat_id><xsl:value-of select=\"//Recipient/UserTelegramChatID\"
+            /></chat_id>\r\n            <parse_mode>html</parse_mode>\r\n            <text><xsl:value-of
+            select=\"//NotificationPlainBody\" /></text>\r\n        </xsl:copy>\r\n
+            \   </xsl:template>\r\n</xsl:transform>"
+        Type: XSLT
+      Type: Ticket::Generic
+  Transport:
+    Config:
+      AdditionalHeaders: ~
+      ContentType: JSON
+      DefaultCommand: POST
+      Host: https://api.telegram.org/botUPDATE_TELEGRAM_TOKEN_HERE
+      InvokerControllerMapping:
+        Webhook:
+          Command: POST
+          Controller: /sendMessage
+      SSLNoHostnameVerification: '0'
+      Timeout: '30'
+    Type: HTTP::REST

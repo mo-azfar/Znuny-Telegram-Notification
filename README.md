@@ -26,7 +26,7 @@
 	*Only text are acceptable here.
 
 	
-5. Import and deploy AgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
+5. Import and deploy ZZZAgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
 
 
 6. Obtain the telegram chat_id for the :
