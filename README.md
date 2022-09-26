@@ -31,9 +31,9 @@
 5. Import and deploy ZZZAgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
 
 
-6. Obtain the telegram chat_id for the :
+6. Obtain the telegram chat_id for the agents:
 
-		- agents and update it into Agent Preferences > Miscellaneous > 'Telegram Chat ID' field. 
+		- update it into Agent Preferences > Miscellaneous > 'Telegram Chat ID' field. 
 		- An agent must start the conversation with the created telegram bot (no 1) first by using telegram.  
 		- By using  https://api.telegram.org/bot<TOKEN>/getUpdates , we can obtain the chat_id of the agent. 
 
