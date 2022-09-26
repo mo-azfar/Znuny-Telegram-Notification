@@ -21,7 +21,9 @@
 	
 4. At Invoker (Webhook), check mapping for outgoing data (XSLT)
 	
-	a) <text><xsl:value-of select="//NotificationPlainBody" /></text> = The text value will be taken from configured Ticket Notification or you can define your text here
+		<text><xsl:value-of select="//NotificationPlainBody" /></text> 
+	
+	The text value will be taken from configured Ticket Notification or you can define your text here
 	
 	*Only text are acceptable here.
 
