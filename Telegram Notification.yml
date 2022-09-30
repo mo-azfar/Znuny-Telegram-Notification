@@ -29,7 +29,8 @@ Requester:
             encoding=\"utf-8\" indent=\"yes\"/>\r\n    <xsl:template match=\"RootElement\">\r\n
             \       <xsl:copy>\r\n          <chat_id><xsl:value-of select=\"//Recipient/UserTelegramChatID\"
             /></chat_id>\r\n            <parse_mode>html</parse_mode>\r\n            <text>\r\n
-            \           \t<xsl:value-of select=\"//NotificationPlainBody\" />&#xa;\r\nhttps://app.myserver.com/znuny-devel/index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of
+            \           \t<xsl:value-of select=\"//NotificationPlainBody\" />&#xa;\r\n
+            &lt;OTRS_CONFIG_HttpType&gt;://&lt;OTRS_CONFIG_FQDN&gt;/&lt;OTRS_CONFIG_ScriptAlias&gt;index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of
             select=\"//Ticket/TicketID\" />\r\n          \t</text>\r\n        </xsl:copy>\r\n
             \   </xsl:template>\r\n</xsl:transform>"
         Type: XSLT
