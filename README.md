@@ -26,7 +26,8 @@
 	
 	The text value will be taken from configured Ticket Notification or you can define your text here
 	
-	*Only text are acceptable here.
+	**Only text are acceptable here.**
+	
 	**CHANGE THE URL SERVERNAME AND SCRIPT ALIAS TO MATCH YOUR ENVIRONMENT**
 	
 	
