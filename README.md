@@ -21,7 +21,8 @@
 	
 4. At Invoker (Webhook), check mapping for outgoing data (XSLT)
 	
-		<text><xsl:value-of select="//NotificationPlainBody" /></text> 
+		<xsl:value-of select="//NotificationPlainBody" />&#xa;
+		https://app.myserver.com/znuny-devel/index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of select="//Ticket/TicketID" /> 
 	
 	The text value will be taken from configured Ticket Notification or you can define your text here
 	

@@ -27,9 +27,10 @@ Requester:
             version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:date=\"http://exslt.org/dates-and-times\"
             extension-element-prefixes=\"date\">\r\n    <xsl:output method=\"xml\"
             encoding=\"utf-8\" indent=\"yes\"/>\r\n    <xsl:template match=\"RootElement\">\r\n
-            \       <xsl:copy>\r\n            <chat_id><xsl:value-of select=\"//Recipient/UserTelegramChatID\"
-            /></chat_id>\r\n            <parse_mode>html</parse_mode>\r\n            <text><xsl:value-of
-            select=\"//NotificationPlainBody\" /></text>\r\n        </xsl:copy>\r\n
+            \       <xsl:copy>\r\n          <chat_id><xsl:value-of select=\"//Recipient/UserTelegramChatID\"
+            /></chat_id>\r\n            <parse_mode>html</parse_mode>\r\n            <text>\r\n
+            \           \t<xsl:value-of select=\"//NotificationPlainBody\" />&#xa;\r\nhttps://app.myserver.com/znuny-devel/index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of
+            select=\"//Ticket/TicketID\" />\r\n          \t</text>\r\n        </xsl:copy>\r\n
             \   </xsl:template>\r\n</xsl:transform>"
         Type: XSLT
       Type: Ticket::Generic
