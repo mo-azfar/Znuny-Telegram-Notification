@@ -24,11 +24,11 @@
 		<xsl:value-of select="//NotificationPlainBody" />&#xa;
 		https://app.myserver.com/znuny-devel/index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of select="//Ticket/TicketID" /> 
 	
-	The text value will be taken from configured Ticket Notification or you can define your text here
+		*The text value will be taken from configured Ticket Notification or you can define your text here
 	
-	**Only text are acceptable here.**
-	
-	**CHANGE THE URL SERVERNAME AND SCRIPT ALIAS TO MATCH YOUR ENVIRONMENT**
+		*Only text are acceptable here.
+		
+		*CHANGE THE URL SERVERNAME AND SCRIPT ALIAS TO MATCH YOUR ENVIRONMENT*
 	
 	
 5. Import and deploy ZZZAgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
