@@ -10,7 +10,7 @@ Provider:
 RemoteSystem: ''
 Requester:
   Invoker:
-    Webhook:
+    OwnerUpdate:
       Description: ''
       Events: []
       GetAllArticleAttachments: '0'
@@ -29,10 +29,11 @@ Requester:
             encoding=\"utf-8\" indent=\"yes\"/>\r\n    <xsl:template match=\"RootElement\">\r\n
             \       <xsl:copy>\r\n          <chat_id><xsl:value-of select=\"//Recipient/UserTelegramChatID\"
             /></chat_id>\r\n            <parse_mode>html</parse_mode>\r\n            <text>\r\n
-            \           \t<xsl:value-of select=\"//NotificationPlainBody\" />&#xa;\r\n
-            &lt;OTRS_CONFIG_HttpType&gt;://&lt;OTRS_CONFIG_FQDN&gt;/&lt;OTRS_CONFIG_ScriptAlias&gt;index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of
-            select=\"//Ticket/TicketID\" />\r\n          \t</text>\r\n        </xsl:copy>\r\n
-            \   </xsl:template>\r\n</xsl:transform>"
+            \           \tOwner of &lt;OTRS_CONFIG_Ticket::Hook&gt;<xsl:value-of select=\"//Ticket/TicketNumber\"
+            />&#x20;has been assigned to&#x20;<xsl:value-of select=\"//Ticket/OwnerData/UserFullname\"
+            />&#xa;\r\n&lt;a href=\"&lt;OTRS_CONFIG_HttpType&gt;://&lt;OTRS_CONFIG_FQDN&gt;/&lt;OTRS_CONFIG_ScriptAlias&gt;index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of
+            select=\"//Ticket/TicketID\" />;\"&gt;VIEW&lt;/a&gt;\r\n          \t</text>\r\n
+            \       </xsl:copy>\r\n    </xsl:template>\r\n</xsl:transform>"
         Type: XSLT
       Type: Ticket::Generic
   Transport:
@@ -42,7 +43,7 @@ Requester:
       DefaultCommand: POST
       Host: https://api.telegram.org/botUPDATE_TELEGRAM_TOKEN_HERE
       InvokerControllerMapping:
-        Webhook:
+        OwnerUpdate:
           Command: POST
           Controller: /sendMessage
       SSLNoHostnameVerification: '0'

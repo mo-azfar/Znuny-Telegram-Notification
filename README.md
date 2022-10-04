@@ -2,6 +2,10 @@
 - Znuny-Ticket-Notification-To-Telegram-Users Via Webservices
 - Required at least Znuny 6.1.x
 
+- This is only for Notification Owner Update.
+- For others kind of notification, kindly create another Invoker. You may refer existing invoker (OwnerUpdate) and existing HTTP::REST Configuration.
+
+
 1. A telegram bot must be created by chat with @FatherBot and obtain the token via Telegram.  
 
 
@@ -19,37 +23,26 @@
 	c) Save and finish
 
 	
-4. At Invoker (Webhook), check mapping for outgoing data (XSLT)
-	
-		<xsl:value-of select="//NotificationPlainBody" />&#xa;
-		&lt;OTRS_CONFIG_HttpType&gt;://&lt;OTRS_CONFIG_FQDN&gt;/&lt;OTRS_CONFIG_ScriptAlias&gt;index.pl?Action=AgentTicketZoom;TicketID=<xsl:value-of select="//Ticket/TicketID" />
-	
-		*The text value will be taken from configured Ticket Notification or you can define your text here
-	
-		*Only text are acceptable here.
-		
-	
-5. Import and deploy ZZZAgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
+4. Import and deploy ZZZAgentTelegram.xml at /opt/otrs/Kernel/Config/Files/XML/
 
 
-6. Obtain the telegram chat_id for the agents:
+5. Obtain the telegram chat_id for the agents:
 
 		- update it into Agent Preferences > Miscellaneous > 'Telegram Chat ID' field. 
 		- An agent must start the conversation with the created telegram bot (no 1) first by using telegram.  
 		- By using  https://api.telegram.org/bot<TOKEN>/getUpdates , we can obtain the chat_id of the agent. 
 
 
-7. Create a new Ticket Notification  
+6. Create a new Ticket Notification  
 
-		- Event: Up to you
-		- Select Recipients. (Should be agents only whos has telegram chat id updated into their profile (no 6 above) ).
+		- Event: NotificationOwnerUpdate
+		- Select Recipients: (Should be owners)
 		- Select Notification Methods: Webservices 
 			-- Web service name: Telegram Notification
-			-- Invoker: Webhook 
+			-- Invoker: OwnerUpdate 
 		
-		- Notification Text
-			-- keep it simple. 1 line only!!!
+		- Notification Body and Text
+			-- Anything as the actual value is set from XSLT itself.
 
-[![s4.png](https://i.postimg.cc/CLB3pqSy/Screenshot-2022-09-25-052348.png)](https://postimg.cc/dLFH8Dhn)
 [![s3.png](https://i.postimg.cc/mZ6vnwxN/Screenshot-2022-09-25-052244.png)](https://postimg.cc/F13Cd0H7)
 
