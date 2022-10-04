@@ -2,8 +2,8 @@
 - Znuny-Ticket-Notification-To-Telegram-Users Via Webservices
 - Required at least Znuny 6.1.x
 
-- This is only for Notification Owner Update.
-- For others kind of notification, kindly create another Invoker. You may refer existing invoker (OwnerUpdate) and existing HTTP::REST Configuration.
+		- This is only for Notification Owner Update.
+		- For others kind of notification, kindly create another Invoker. You may refer existing invoker (OwnerUpdate) and existing HTTP::REST Configuration.
 
 
 1. A telegram bot must be created by chat with @FatherBot and obtain the token via Telegram.  
